@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pomodoro Studying</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="shortcut icon" href="icon.png">
+</head>
+<body>
+    <h1 class="title" title="Title">Pomodoro Studying</h1>
+    <button id="info" class="material-symbols-outlined" title="How to use the app" onclick="info_click()">info</button>
+    <div class="uses">
+        <h2 id="uses_title" title="Title of explanation"><u>How to use</u></h2>
+        <nav class="buttons">
+            <button id="exp_btn" title="Explanation" onclick="exp_btn_click()">Explanation</button>
+            <button id="keys" title="Keyboard shortcuts" onclick="keys_click()">Keyboard Shortcuts</button>
+        </nav>
+        <p id="explanation">
+            <b>Pomodoro Studying</b> is an application that helps you to organize your studying time well using the <u>Pomodoro</u> way.
+            In the Pomodoro, you study 25 minutes; because <i>the human brain cannot stand more than 25 minutes of studying constantly</i>.
+            Then, 5 minutes of break time to separate your brain from focusing in the studying time are enough.
+            After 3 or 4 times doing the above, you can take a longer break as a reward for your hard studying.
+            You can change the number of minutes by <u>clicking on the minutes number and typing the number you want</u>, you can also change the background or the sound that plays when the time is up.
+            Finally, you can know the current time by the button at the bottom.
+            <br>
+            <b><i>Enjoy!</i></b>
+        </p>
+        <ol id="shortcuts">
+            <li>(i) letter = how to use the app</li>
+            <li>(b) letter = change the background</li>
+            <li>(s) letter = change the sound</li>
+            <li>Alt = change the number of minutes</li>
+            <li>Arrows = change the timer / show explanation and keyboard shortcuts</li>
+            <li>Space = play/pause timer</li>
+            <li>Backspace = reset timer</li>
+            <li>Enter = OK</li>
+            <li>Tab = switch the mode (Pomodoro Timer, Current Time)</li>
+        </ol>
+        <button id="uses_ok" title="OK" onclick="uses_ok_click()">OK</button>
+    </div>
+    <button id="backgrounds" class="material-symbols-outlined" title="Change backgrounds" onclick="backgrounds_click()">wallpaper</button>
+    <div class="changeBackground">
+        <h2 id="backgrounds_title" title="Title of changing backgrounds"><u>Change Backgrounds</u></h2>
+        <input type="radio" id="standard_backgroundr" name="backgrounds" class="radios" title="Standard Background">
+        <label for="standard_backgroundr" id="standard_backgroundl" class="labels" title="Standard Background">Standard Background</label>
+        <br>
+        <input type="radio" id="background1r" name="backgrounds" class="radios" title="Background 1">
+        <label for="background1r" id="background1l" class="labels" title="Background 1">Background 1</label>
+        <br>
+        <input type="radio" id="background2r" name="backgrounds" class="radios" title="Background 2">
+        <label for="background2r" id="background2l" class="labels" title="Background 2">Background 2</label>
+        <br>
+        <input type="radio" id="background3r" name="backgrounds" class="radios" title="Background 3">
+        <label for="background3r" id="background3l" class="labels" title="Background 3">Background 3</label>
+        <br>
+        <input type="radio" id="background4r" name="backgrounds" class="radios" title="Background 4">
+        <label for="background4r" id="background4l" class="labels" title="Background 4">Background 4</label>
+        <button id="backgrounds_ok" title="OK" onclick="backgrounds_ok_click()">OK</button>
+    </div>
+    <button id="sounds" class="material-symbols-outlined" title="Change sounds when time is up" onclick="sounds_click()">volume_up</button>
+    <div class="changeSound">
+        <h2 id="sounds_title" title="Title of changing sounds"><u>Change<br>Sounds</u></h2>
+        <p id="note">(when time is up)</p>
+        <input type="radio" id="sound1r" name="sounds" class="radios" title="Beep-beep 1 (single)">
+        <label for="sound1r" id="sound1l" class="labels" title="Beep-beep 1 (single)">Beep-beep 1 (single)</label>
+        <br>
+        <input type="radio" id="sound2r" name="sounds" class="radios" title="Beep-beep 2 (double)">
+        <label for="sound2r" id="sound2l" class="labels" title="Beep-beep 2 (double)">Beep-beep 2 (double)</label>
+        <br>
+        <input type="radio" id="sound3r" name="sounds" class="radios" title="Beep-beep 3 (single)">
+        <label for="sound3r" id="sound3l" class="labels" title="Beep-beep 3 (single)">Beep-beep 3 (single)</label>
+        <br>
+        <input type="radio" id="sound4r" name="sounds" class="radios" title="Beep-beep 4 (quadraple)">
+        <label for="sound4r" id="sound4l" class="labels" title="Beep-beep 4 (quadraple)">Beep-beep 4 (quadraple)</label>
+        <br>
+        <input type="radio" id="sound5r" name="sounds" class="radios" title="3amaloha elregala">
+        <label for="sound5r" id="sound5l" class="labels" title="3amaloha elregala">3amaloha elregala</label>
+        <button id="sounds_ok" title="OK" onclick="sounds_ok_click()">OK</button>
+    </div>
+    <div class="pomodoroTimerMode">
+        <nav class="sections">
+            <button id="studying" title="Studying" onclick="studying_click()">Studying</button>
+            <button id="shortBreak" title="Short break" onclick="shortBreak_click()">Short Break</button>
+            <button id="longBreak" title="Long break" onclick="longBreak_click()">Long Break</button>
+        </nav>
+        <nav class="timer">
+            <span id="minutes" title="Minutes of the timer" onclick="minutes_click()"></span>
+            <span title="Timer">:</span>
+            <span id="seconds" title="Seconds of the timer"></span>
+            <span id="milliseconds" title="Milliseconds of the timer"></span>
+        </nav>
+        <div id="tup" title="Time's up!">Time's up!</div>
+        <nav class="controls">
+            <button id="play" class="material-symbols-outlined" title="Play timer" onclick="play_timer()">play_arrow</button>
+            <button id="pause" class="material-symbols-outlined" title="Pause timer" onclick="pause_timer()">pause</button>
+            <button id="reset" class="material-symbols-outlined" title="Reset timer" onclick="reset_timer()">history</button>
+            <button id="ok" title="OK" onclick="ok_click()">OK</button>
+        </nav>
+    </div>
+    <div class="currentTimeMode">
+        <nav class="currentTime">
+            <span id="hrs" title="Hours"></span>
+            <span>:</span>
+            <span id="mins" title="Minutes"></span>
+            <span>:</span>
+            <span id="secs" title="Seconds"></span>
+            <span id="period" title="Period"></span>
+        </nav>
+        <nav class="currentDate">
+            <span id="day" title="Day"></span>
+            <span id="date" title="Date"></span>
+            <span id="month" title="Month"></span>
+            <span id="year" title="Year"></span>
+        </nav>
+    </div>
+    <button id="modes" title="Change the mode" onclick="modes_click()">Show Current Time</button>
+    <script src="script.js"></script>
+</body>
+</html>
